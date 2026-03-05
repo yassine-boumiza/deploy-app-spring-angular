@@ -34,14 +34,14 @@ jobs:
         with:
           context: ./springboot/app
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/yassinoooo/tp-backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/yassineoooo/tp-backend:latest
 
       - name: Build and Push Frontend to DockerHub
         uses: docker/build-push-action@v5
         with:
           context: ./angular-app
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/yassinoooo/tp-frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/yassineoooo/tp-frontend:latest
 
       - name: Prepare Local Images for Compose Test
         run: |
