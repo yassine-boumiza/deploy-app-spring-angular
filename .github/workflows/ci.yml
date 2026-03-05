@@ -49,5 +49,6 @@ jobs:
           docker build -t angular-app ./angular-app
 
       - name: Test with Docker Compose
-        working-directory: ./
-        run: docker compose up -d
+        run: |
+          docker compose down
+          docker compose up -d
