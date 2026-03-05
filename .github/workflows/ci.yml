@@ -29,19 +29,22 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Debug Docker Login
+        run: docker info
+
       - name: Build and Push to DockerHub
         uses: docker/build-push-action@v5
         with:
           context: ./springboot/app
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/yassineoooo/tp-backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-backend:latest 
 
       - name: Build and Push Frontend to DockerHub
         uses: docker/build-push-action@v5
         with:
           context: ./angular-app
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/yassineoooo/tp-frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-frontend:latest 
 
       - name: Prepare Local Images for Compose Test
         run: |
