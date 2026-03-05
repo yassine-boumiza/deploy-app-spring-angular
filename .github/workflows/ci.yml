@@ -41,7 +41,7 @@ jobs:
         with:
           context: ./angular-app
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/yassinoooo/tp-backend/tp-frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/yassinoooo/tp-frontend:latest
 
       - name: Prepare Local Images for Compose Test
         run: |
