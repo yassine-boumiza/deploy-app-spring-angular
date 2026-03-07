@@ -28,4 +28,10 @@ public class UserController {
         this.userService.deleteUser(id);
         return true;
     }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RestController
+    @RequestMapping("/user")
+    public class UserController {
+
 }
