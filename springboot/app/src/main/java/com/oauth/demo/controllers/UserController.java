@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
+
     @Autowired
     UserService userService;
 
@@ -20,7 +22,7 @@ public class UserController {
 
     @PostMapping(value="/add")
     public User addUser(@RequestBody User user) {
-        return this.userService.addUser(user.getFirstName(),user.getLastName());
+        return this.userService.addUser(user.getFirstName(), user.getLastName());
     }
 
     @DeleteMapping(value="/delete/{id}")
@@ -28,10 +30,4 @@ public class UserController {
         this.userService.deleteUser(id);
         return true;
     }
-
-    @CrossOrigin(origins = "http://localhost:4200")
-    @RestController
-    @RequestMapping("/user")
-    public class UserController {
-
 }
