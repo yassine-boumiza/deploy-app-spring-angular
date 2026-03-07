@@ -1,6 +1,9 @@
-FROM eclipse-temurin:11
-VOLUME /tmp
-EXPOSE 8081
-ARG JAR_FILE=target/demo-0.0.1.jar
-ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM openjdk:17-jdk-slim
+
+WORKDIR /app
+
+COPY target/*.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","app.jar"]
