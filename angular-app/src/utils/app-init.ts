@@ -7,7 +7,7 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
       try {
         await keycloak.init({
           config: {
-            url: 'http://localhost:8080/',
+            url: 'http://192.168.0.95:8080/',
             realm: 'oauth',
             clientId: 'angular',
           },
